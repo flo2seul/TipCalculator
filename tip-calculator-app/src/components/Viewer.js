@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Viewer = () => {
+const Viewer = ({total}) => {
+
+
     return (
         <div className='viewer-box'>
             <div className='tip-amount'>
@@ -11,7 +13,7 @@ const Viewer = () => {
             <div>
                 <span>Total</span>
                 <span>/ person</span>
-                <span>$0.00</span>
+                <span>${total}</span>
             </div>
             <button>RESET</button>
         </div>
