@@ -1,11 +1,10 @@
 import React from "react";
 
-const Bill = ({updateTotal, updateBill}) => {
+const Bill = ({updateBill}) => {
     const [value, setValue] = React.useState('');
 
     function handleInputChage(e) {
         const userValue = e.target.value;
-        updateTotal(userValue);
         updateBill(userValue);
         setValue(userValue);
     }

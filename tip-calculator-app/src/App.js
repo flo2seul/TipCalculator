@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Bill from './components/Bill'
 import SelectTip from './components/SelectTip'
 import People from './components/People';
@@ -9,34 +9,38 @@ import './App.css';
 function App() {
 
   const [bill, setBill] = React.useState("0")
-  const [total, setTotal] = React.useState("0.00")
+  const [person, setPerson] = React.useState("0");
   const [tip, setTip] = React.useState("0");
-  
-  
+  const [tipAmount, setTipAmount] = React.useState("0.00")
+  const [total, setTotal] = React.useState("0.00")
+
   function updateBill(value) {
     setBill(value);
   }
-  function updateTotal(value) {
-    setTotal(value);
-    return value;
-  }
+
   function updatePerson(value) {
-    //setPerson(value);
-   const person = value;
-    
-    calculate(person);
+    setPerson(value)
   }
+
   function updateTip(value) {
-    setTip(value)
-  }
-  function calculate(person) {
+    setTip(value);
     
-    if (person !== "") {
- 
-      setTotal(total/person);
-    } else {
-      setTotal(bill);
-    }
+  }
+
+  React.useEffect(()=> {
+    calculate();
+  },[bill, person, tip])
+
+  function calculate() {
+    console.log(bill, person, tip);
+    setTipAmount((bill*tip)/100);
+    // if (person !== "") {
+    //   const result = Number.isInteger(total/person) ? total/person : (total/person).toFixed(2);
+    //   setTotal(result);
+    // } else {
+    //   setTotal(bill);
+    // }
+  
   }
  
 
@@ -46,12 +50,12 @@ function App() {
       <div>TTER</div>
       <div className="calculator">
         <div className="setting">
-          <Bill updateTotal={updateTotal} updateBill={updateBill}/>
-          <SelectTip/>
+          <Bill updateBill={updateBill}/>
+          <SelectTip updateTip={updateTip}/>
           <People updatePerson={updatePerson}/>
         </div>
         <div className="viewer">
-              <Viewer total={total}/>
+              <Viewer total={total} tipAmount={tipAmount}/>
         </div>
       </div>
     </div>
