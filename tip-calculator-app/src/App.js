@@ -28,18 +28,20 @@ function App() {
   }
 
   React.useEffect(()=> {
-    calculate();
+    if (person == 0 || bill == 0 || tip== 0) {
+  
+    } else {
+      calculate();
+    }
   },[bill, person, tip])
 
   function calculate() {
-    console.log(bill, person, tip);
-    setTipAmount((bill*tip)/100);
-    // if (person !== "") {
-    //   const result = Number.isInteger(total/person) ? total/person : (total/person).toFixed(2);
-    //   setTotal(result);
-    // } else {
-    //   setTotal(bill);
-    // }
+    const totalTip = (bill*tip)/100
+    const totalCost = (bill*1) + (totalTip*1);
+    const resultTip = Number.isInteger(totalTip/person) ? totalTip/person : (totalTip/person).toFixed(2)
+    const resultTotal = Number.isInteger(totalCost/person) ? totalCost/person : (totalCost/person).toFixed(2)
+    setTipAmount(resultTip);
+    setTotal(resultTotal)
   
   }
  
