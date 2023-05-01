@@ -7,8 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #c5e4e7;
 }
-
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

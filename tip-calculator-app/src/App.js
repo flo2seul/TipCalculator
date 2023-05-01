@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import React, { useEffect } from 'react';
 import Bill from './components/Bill'
 import SelectTip from './components/SelectTip'
 import People from './components/People';
 import Viewer from './components/Viewer'
 import './App.css';
+import logo from './images/logo.svg';
 
 function App() {
 
@@ -48,8 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>SPLI</div>
-      <div>TTER</div>
+      <img src={logo} alt=""/>
       <div className="calculator">
         <div className="setting">
           <Bill updateBill={updateBill}/>

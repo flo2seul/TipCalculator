@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Bill.css';
 
 const Bill = ({updateBill}) => {
     const [value, setValue] = React.useState('');
@@ -11,8 +12,8 @@ const Bill = ({updateBill}) => {
 
     return(
         <div className="bill">
-            <div>Bill</div>
-            <input type="text" value={value} onChange={handleInputChage}></input>
+            <div className="bill-title">Bill</div>
+            <input className="bill-input" type="text" value={value} onChange={handleInputChage}></input>
         </div>
     )
 }
