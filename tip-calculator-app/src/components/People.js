@@ -1,4 +1,5 @@
 import React from "react"
+import '../styles/People.css';
 
 const People = ({updatePerson}) => {
     const [value, setValue] = React.useState('');
@@ -10,8 +11,8 @@ const People = ({updatePerson}) => {
     }
     return (
         <div className="people">
-            <div>Number of People</div>
-            <input type="text" value={value} onChange={handleInputChange}></input>
+            <div className="people-title">Number of People</div>
+            <input className="people-input" type="text" value={value} onChange={handleInputChange}></input>
         </div>
     )
 }

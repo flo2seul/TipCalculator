@@ -1,0 +1,33 @@
+.people-title {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5E7A7D;
+    padding-bottom: 6px;
+}
+.people-input {
+background: #F3F9FA;
+border-radius: 5px;
+border-width: 0px;
+border-style: inset;
+border-color: transparent;
+background-image: url('../images/icon-person.svg');
+background-repeat: no-repeat;
+height: 48px;
+width: 100%;
+outline: none; 
+background-position: 19px 16px;
+text-align: right;
+color: #00474B;
+font-family: 'Space Mono';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+padding-right: 17px;
+}
+.people-input:focus {
+    border: 2px solid #26C2AE !important
+  }

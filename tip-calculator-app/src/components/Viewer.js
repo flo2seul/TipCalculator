@@ -1,15 +1,16 @@
 import React from 'react'
+import '../styles/Viewer.css';
 
 const Viewer = ({total, tipAmount}) => {
   
     return (
         <div className='viewer-box'>
-            <div className='tip-amount'>
+            <div className='view-tip-amount'>
                 <span>Tip Amount</span>
                 <span>/ person</span>
                 <span>${tipAmount}</span>
             </div>
-            <div>
+            <div className='view-total'>
                 <span>Total</span>
                 <span>/ person</span>
                 <span>${total || 0.00}</span>

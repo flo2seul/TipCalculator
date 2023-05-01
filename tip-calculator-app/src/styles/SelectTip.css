@@ -1,4 +1,12 @@
-
+.select-tip-title {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5E7A7D;
+    padding-bottom: 6px;
+}
 button {
     margin: 3px 15px 10px 10px;
     width: 50px;

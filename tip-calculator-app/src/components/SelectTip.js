@@ -38,7 +38,7 @@ const SelectTip = ({updateTip}) => {
     }
     return (
         <div className="select-tip">
-            <div>Select Tip %</div>
+            <div className="select-tip-title">Select Tip %</div>
             <div className="button-group" onClick={onTipClick} ref={group}>
                 <button className="one">5%</button>
                 <button className="two">10%</button>
