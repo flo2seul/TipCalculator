@@ -8,8 +8,8 @@
   margin-top: 87px;
   display: flex;
   background: white;
-  height: 400px;
-  width: 65%;
+  height: 480px;
+  width: 80%;
   border-radius: 25px;
   box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
 }
@@ -20,6 +20,7 @@
   justify-content: space-between;
 }
 .viewer {
+  display: flex;
   width: 50%;
   margin: 32px 32px 32px 0;
   padding: 40px;

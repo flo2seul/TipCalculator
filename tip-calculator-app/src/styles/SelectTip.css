@@ -7,8 +7,29 @@
     color: #5E7A7D;
     padding-bottom: 6px;
 }
-button {
-    margin: 3px 15px 10px 10px;
-    width: 50px;
-    height: 20px;
+.button-group {
+    width: 400px;
+}
+.button-group button {
+    margin-bottom: 16px;
+    cursor: pointer;
+    height: 48px;
+    width: 117px;
+    left: 0px;
+    top: 0px;
+    border-radius: 5px;
+    background: #00474B;
+    color: white;
+    font-family: 'Space Mono';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+/* identical to box height */
+border-color: transparent;
+border-width: 0px;
+text-align: center;
+}
+.one, .two, .four, .five {
+    margin-right: 14px;
 }

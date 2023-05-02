@@ -14,7 +14,7 @@ const SelectTip = ({updateTip}) => {
             const tip = name.replace(/\D/g, '');
             updateTip(tip);
             onButtonChange(cls);
-            onButtonColorChange(cls, "red");
+            onButtonColorChange(cls, "#26C2AE", "#00474B");
         }
        
      }
@@ -24,17 +24,18 @@ const SelectTip = ({updateTip}) => {
         if(buttonGroup.length === 1) {
             buttonGroup.add(cls);
         } else {
-            onButtonColorChange(buttonGroup[1], "none")
+            onButtonColorChange(buttonGroup[1], "none", "white")
             buttonGroup.remove(buttonGroup[1]);
             buttonGroup.add(cls);
        
              }
 
     }
-    function onButtonColorChange(cls, color) {
+    function onButtonColorChange(cls, color, font) {
         const main = group.current
        const button = main.querySelector(`.${cls}`);
-        button.style = `background-color: ${color};`
+        button.style = `background-color: ${color}; color: ${font};`
+        //button.style = `font-color: #00474B;`
     }
     return (
         <div className="select-tip">
@@ -46,6 +47,7 @@ const SelectTip = ({updateTip}) => {
                 <button className="four">20%</button>
                 <button className="five">25%</button>
                 <button className="six">CUSTOM</button>
+
             </div>
         </div>
     )
