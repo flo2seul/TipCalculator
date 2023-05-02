@@ -10,6 +10,8 @@ const Bill = ({updateBill}) => {
         setValue(userValue);
     }
 
+  
+
     return(
         <div className="bill">
             <div className="bill-title">Bill</div>

@@ -9,6 +9,8 @@ const People = ({updatePerson}) => {
         updatePerson(userValue);
         setValue(userValue);
     }
+
+ 
     return (
         <div className="people">
             <div className="people-title">Number of People</div>

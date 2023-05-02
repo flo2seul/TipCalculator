@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Viewer.css';
 
-const Viewer = ({total, tipAmount}) => {
+const Viewer = ({total, tipAmount, onResetClick}) => {
   
     return (
         <div className='viewer-box'>
@@ -21,7 +21,7 @@ const Viewer = ({total, tipAmount}) => {
                     <span>${total || 0.00}</span>
                 </div>
             </div>
-            <button>RESET</button>
+            <button onClick={onResetClick}>RESET</button>
         </div>
     )
 }

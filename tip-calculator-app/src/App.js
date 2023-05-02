@@ -11,8 +11,8 @@ function App() {
   const [bill, setBill] = React.useState("0")
   const [person, setPerson] = React.useState("0");
   const [tip, setTip] = React.useState("0");
-  const [tipAmount, setTipAmount] = React.useState("0.00")
-  const [total, setTotal] = React.useState("0.00")
+  const [tipAmount, setTipAmount] = React.useState("0.00");
+  const [total, setTotal] = React.useState("0.00");
 
   function updateBill(value) {
     setBill(value);
@@ -29,7 +29,7 @@ function App() {
 
   React.useEffect(()=> {
     if (person == 0 || bill == 0 || tip== 0) {
-  
+ 
     } else {
       calculate();
     }
@@ -44,19 +44,27 @@ function App() {
     setTotal(resultTotal)
   
   }
+
  
+  function onResetClick(e) {
+    setTipAmount(0)
+    setTotal(0)
+  }
+
+ 
+  
 
   return (
     <div className="App">
       <img src={logo} alt=""/>
       <div className="calculator">
         <div className="setting">
-          <Bill updateBill={updateBill}/>
+          <Bill updateBill={updateBill} />
           <SelectTip updateTip={updateTip}/>
-          <People updatePerson={updatePerson}/>
+          <People updatePerson={updatePerson} />
         </div>
         <div className="viewer">
-              <Viewer total={total} tipAmount={tipAmount}/>
+              <Viewer total={total} tipAmount={tipAmount} onResetClick={onResetClick}/>
         </div>
       </div>
     </div>
