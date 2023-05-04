@@ -16,21 +16,30 @@ function App() {
   const [reset, setReset] = React.useState(false);
 
   function updateBill(value) {
+    if (reset) {
+    setReset(false);
+    }
     setBill(value);
   }
 
   function updatePerson(value) {
+    if (reset) {
+      setReset(false);
+      }
     setPerson(value)
   }
 
   function updateTip(value) {
+    if (reset) {
+      setReset(false);
+      }
     setTip(value);
     
   }
 
   React.useEffect(()=> {
     if (person == 0 || bill == 0 || tip== 0) {
- 
+
     } else {
       calculate();
     }
@@ -48,8 +57,11 @@ function App() {
 
  
   function onResetClick(e) {
-    setTipAmount(0)
-    setTotal(0)
+    setTipAmount(0.00)
+    setTotal(0.00)
+    setBill(0)
+    setTip(0)
+    setPerson(0)
     setReset(true)
   }
 
