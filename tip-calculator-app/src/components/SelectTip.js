@@ -1,9 +1,10 @@
 import React from "react"
 import '../styles/SelectTip.css';
 
-const SelectTip = ({updateTip}) => {
+const SelectTip = ({updateTip, reset}) => {
 
     const group = React.useRef();
+ 
     // div에 선택한 버튼 아이디 클래스로 올려서 넣다 뺏다 하면서 클릭된 버튼이 잇는지 없는지 확인해주기 플러스 css자동적용
     function onTipClick(e) {
         const tagName = e.target.tagName;
@@ -20,23 +21,32 @@ const SelectTip = ({updateTip}) => {
      }
     function onButtonChange(cls) {
         const buttonGroup = group.current.classList;
-      
         if(buttonGroup.length === 1) {
             buttonGroup.add(cls);
         } else {
-            onButtonColorChange(buttonGroup[1], "none", "white")
-            buttonGroup.remove(buttonGroup[1]);
+            onRemoveClass();
             buttonGroup.add(cls);
        
              }
 
     }
+    function onRemoveClass() {
+        const buttonGroup = group.current.classList;
+        onButtonColorChange(buttonGroup[1], "none", "white")
+        buttonGroup.remove(buttonGroup[1]);
+    }
     function onButtonColorChange(cls, color, font) {
         const main = group.current
        const button = main.querySelector(`.${cls}`);
         button.style = `background-color: ${color}; color: ${font};`
-        //button.style = `font-color: #00474B;`
     }
+    React.useEffect(()=> {
+        if(reset) {
+   
+      onRemoveClass();
+        }
+     
+       },[reset])
     return (
         <div className="select-tip">
             <div className="select-tip-title">Select Tip %</div>

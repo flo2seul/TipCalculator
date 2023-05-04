@@ -1,7 +1,7 @@
 import React from "react"
 import '../styles/People.css';
 
-const People = ({updatePerson}) => {
+const People = ({updatePerson, reset}) => {
     const [value, setValue] = React.useState('');
 
     function handleInputChange(e) {
@@ -9,7 +9,11 @@ const People = ({updatePerson}) => {
         updatePerson(userValue);
         setValue(userValue);
     }
-
+    React.useEffect(()=> {
+        if(reset) {
+         setValue('')
+        }
+       },[reset])
  
     return (
         <div className="people">
