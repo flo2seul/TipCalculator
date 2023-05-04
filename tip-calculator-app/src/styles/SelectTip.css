@@ -30,6 +30,6 @@ border-color: transparent;
 border-width: 0px;
 text-align: center;
 }
-.one, .two, .four, .five {
+button.one, button.two, button.four, button.five {
     margin-right: 14px;
 }
