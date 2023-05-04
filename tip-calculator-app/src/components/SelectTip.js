@@ -56,8 +56,7 @@ const SelectTip = ({updateTip, reset}) => {
                 <button className="three">15%</button>
                 <button className="four">20%</button>
                 <button className="five">25%</button>
-                <button className="six">CUSTOM</button>
-
+                <button className="six">30%</button>
             </div>
         </div>
     )
