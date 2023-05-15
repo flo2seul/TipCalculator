@@ -25,7 +25,6 @@ const People = ({updatePerson, reset}) => {
 
     }
     React.useEffect(() => {
-        console.log(value)
         if(value == "0") {
             onAlertMode();
         } else {

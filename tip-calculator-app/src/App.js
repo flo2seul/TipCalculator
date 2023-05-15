@@ -38,11 +38,8 @@ function App() {
   }
 
   React.useEffect(()=> {
-    if (person == 0 || bill == 0 || tip== 0) {
-
-    } else {
-      calculate();
-    }
+    if (person*bill*tip !== 0) calculate();
+    
   },[bill, person, tip])
 
   function calculate() {
@@ -78,7 +75,7 @@ function App() {
           <People updatePerson={updatePerson} reset={reset}/>
         </div>
         <div className="viewer">
-              <Viewer total={total} tipAmount={tipAmount} onResetClick={onResetClick}/>
+          <Viewer total={total} tipAmount={tipAmount} onResetClick={onResetClick}/>
         </div>
       </div>
     </div>

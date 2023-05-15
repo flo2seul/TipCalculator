@@ -6,6 +6,7 @@ const SelectTip = ({updateTip, reset}) => {
     const group = React.useRef();
  
     // div에 선택한 버튼 아이디 클래스로 올려서 넣다 뺏다 하면서 클릭된 버튼이 잇는지 없는지 확인해주기 플러스 css자동적용
+    // useBoolean, useState
     function onTipClick(e) {
         const tagName = e.target.tagName;
         const name = e.target.innerHTML
